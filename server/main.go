@@ -24,6 +24,32 @@ type Repository struct {
 	solutions []*pb.Solution
 }
 
+//Equation ...
+func Equation(a int, b int, c int) int {
+  
+    var d = b*b - 4*a*c; 
+    sqrtVal := sqrt(abs(d))
+  
+    if d > 0 { 
+        x1 := (double)(-b + sqrtVal)/(2*a) 
+		v2 := (double)(-b - sqrtVal)/(2*a)
+		n_roots := append(count, x1, x2)
+		// fmt.Printf("%d", len(count))
+    } else if d == 0 { 
+		x := b / (2*a)
+		n_roots = append(count, x)
+		// fmt.Printf("%d", len(count))
+	} else // d < 0 
+	{ 
+        x3 := b / (2*a), sqrtVal 
+		x4 := b / (2*a), sqrtVal
+		n_roots := append(count, x3, x4)
+		// fmt.Printf("%d", len(count))
+	} 
+	solution := len(n_roots)
+	return solution
+}
+
 //Solve ....
 func (r *Repository) Solve(solution *pb.Solution) (*pb.Solution, error) {
 	updatedSolution := append(r.solutions, solution)
